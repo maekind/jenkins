@@ -1,0 +1,10 @@
+watchdog
+requests
+bcrypt
+Flask
+tinytag
+mysql-connector-python
+requests
+spotipy
+fuzzywuzzy
+python-Levenshtein
