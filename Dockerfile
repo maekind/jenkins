@@ -12,19 +12,22 @@ RUN apt update && apt install -y \
       pylint3 \
       gcc \ 
       python3-dev \ 
-      python3-pip
+      python3-pip \
+      curl \  
+      && apt autoremove \
+      && rm -Rf /var/cache/apt/* \
+      && rm -Rf /var/lib/apt/lists/*  
 
 # Change working dir to app and copy requirements
 WORKDIR /app
 COPY requirements.txt requirements.txt
 
 # Install requirements
-RUN pip3 install -r requirements.txt
-
-#TODO: Eliminar paquetes e intentar coger la útlima versión de nodejs con curl
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 # Install nodejs and angular cli
 COPY node-v14.17.0-linux-x64.tar.xz node-v14.17.0-linux-x64.tar.xz
+
 RUN mkdir -p /usr/local/lib/nodejs \ 
       && tar -xJvf node-v14.17.0-linux-x64.tar.xz -C /usr/local/lib/nodejs \
       && ln -s /usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin/node /usr/bin/node \
