@@ -6,10 +6,9 @@ This image has the following functions:
 
 # Samples
 
-- docker-compose-sample.yaml file: This is sample that maps jenkins data folder (/var/jenkins_home)
+- docker-compose-sample.yaml file: This is a sample that maps jenkins data folder (/var/jenkins_home)
 to an external NFS folder. In my case, placed into a NAS. In order to have this sample running,
-you have to replace variables $FQDN with your NAS ip or fqdn and $YOUR_PATH with the data folder. 
-s
+you have to replace variables $FQDN with your NAS ip or fqdn address and $YOUR_PATH with the data folder. 
 
 ## Credits
 
