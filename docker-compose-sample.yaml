@@ -1,0 +1,24 @@
+# jenkins docker compose file
+version: '3.1'
+
+services:
+
+  cicd:
+    image: maekind/jenkins
+    container_name: jenkins
+    hostname: jenkins
+    volumes:
+        - jenkins_home:/var/jenkins_home       
+    restart: always
+   
+    ports:
+      - '8070:8080'
+      - '50000:50000'
+
+  
+volumes:
+    jenkins_home:
+        driver_opts:
+          type: "nfs"
+          o: "addr=$FQDN,nolock,soft,rw"
+          device: ":/$YOUR_PATH"

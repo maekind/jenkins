@@ -2,7 +2,7 @@
 
 This image has the following functions:
 - Pylint checker for verifying python style files and error.
-- Node.js and angular to build angular projects.
+- Node.js 14.17, angular CLI 13.0.3 and npm 8.1.3 to build angular projects.
 
 ## Credits
 
