@@ -2,7 +2,7 @@
 
 This image has the following functions:
 - Pylint checker for verifying python style files and error.
-- Node.js 14.17, angular CLI 13.0.3 and npm 8.1.3 to build angular projects.
+- Node.js, angular CLI and npm to build angular projects.
 
 # Samples
 
@@ -12,6 +12,6 @@ you have to replace variables $FQDN with your NAS ip or fqdn address and $YOUR_P
 
 ## Credits
 
-2021 Copyright to Marco Espinosa. 
+2021-2023 Copyright to Marco Espinosa. 
 
 Say hello!: [hi@marcoespinosa.es](mailto:hi@marcoespinosa.es)
