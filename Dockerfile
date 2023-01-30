@@ -26,19 +26,19 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt --no-cache-dir
 
 # Install nodejs and angular cli
-COPY node-v14.17.0-linux-x64.tar.xz node-v14.17.0-linux-x64.tar.xz
+COPY node-v18.13.0-linux-x64.tar.xz node-linux-x64.tar.xz
 
 RUN mkdir -p /usr/local/lib/nodejs \ 
-      && tar -xJvf node-v14.17.0-linux-x64.tar.xz -C /usr/local/lib/nodejs \
-      && ln -s /usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin/node /usr/bin/node \
-      && ln -s /usr/local/lib/nodejs/node-v14.17.0-linux-x64/bin/npm /usr/local/bin/npm \ 
+      && tar -xJvf node-linux-x64.tar.xz -C /usr/local/lib/nodejs \
+      && ln -s /usr/local/lib/nodejs/node-linux-x64/bin/node /usr/bin/node \
+      && ln -s /usr/local/lib/nodejs/node-linux-x64/bin/npm /usr/local/bin/npm \ 
       && npm install -g npm \ 
       && npm version \ 
       && npm install -g @angular/cli \
       && npm link @angular/cli \ 
-      && ln -s /usr/local/lib/nodejs/node-v14.17.0-linux-x64/lib/node_modules/@angular/cli/bin/ng.js  /usr/local/bin/ng \
+      && ln -s /usr/local/lib/nodejs/node-linux-x64/lib/node_modules/@angular/cli/bin/ng.js  /usr/local/bin/ng \
       && ng version \ 
-      && rm -f node-v14.17.0-linux-x64.tar.xz \
+      && rm -f node-linux-x64.tar.xz \
       && rm -Rf node_modules \  
       && rm requirements.txt
 
